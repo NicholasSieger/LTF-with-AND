@@ -1,0 +1,69 @@
+In this section we show how an LTF can be broken down into monotone and antimonotone functions. We provide an AND Decision Tree algorithm to compute an LTF based on this decomposition and then conclude that there exists a communication protocol that computes the LTF, formed by bitwise $\wedge$ of the inputs to Alice and Bob, that is polylogarithmic in the monomial complexity of the LTF.  Since $\text{rank}({M_{f_{\wedge}}}) = mon(f_{\wedge})$ from \cite{Buhrman1999}, we have that the Log-rank holds for LTFs of the mentioned form.
+
+Throughout this section we will assume that $f$ is a linear threshold function (LTF) of the form $f(x) = w_1x_1 + ... w_nx_n > w_0$. We assume  without loss of generality that $w_0 \geq 0$. 
+
+For an input $x$, we will denote $W_f(x)$ to denote the set $\{w_i \ | \ x_i = 1\}$ for the LTF $f$. Naturally, we define $W^+_f(x)$ to be subset of $W_f(x)$ that has positive weights and correspondingly we define $W^-_f(x)$. Similarly, we define $x^+$ and $x^-$ to be the substrings that correspond to the weights.
+
+\begin{definition}
+	An input $x$ is a $pivot$ if $f(x) = 1$ and for any $x_i = 1$, flipping $x_i$ to $0$, $x^{-i}$, causes the function value to flip, $f(x^{-i}) = 0$. 
+\end{definition}
+
+\begin{definition}
+	An input $x$ is an $antipivot$ if $f(x) = 0$ and for any $x_i = 1, w_i < 0$, we have that $f(x^{-i}) = 1$. 
+\end{definition}
+
+\begin{fact}\label{fact1}
+	There does not exist an input $x'$ and a pivot $x$ such that $S_{x'} \subset S_x$ and $f(x') = 1$. Similarly, this extends to bits corresponding to negative weights in antipivots. 
+\end{fact}
+
+The concept of function restrictions easily extends to LTFs. We shall consider the restrictions that restrict some of the input bits to $1$. Let $f_x$ be defined as the function that is restricted to the $0$ bits of $x$. Clearly, the restricted function $f_x$ has weights $\{w_1, ..., w_n\} \backslash W_f(x)$ and has the condition that the linear combination of weights must be more than $w_0 - \sum_{w_i \in W_f(x)} w_i$. Notice that now that this expression is negative. We will define $P_f, A_f$ to the set of inputs $x$ for $f$ that are pivots and antipivots respectively. 
+
+We are now ready to propose the AND Decision Tree (ADT) algorithm that computes $f(x)$. 
+
+\begin{algorithm}[H]\label{alg1}
+\KwIn{$x \in \{0, 1^n\}$}
+\While{$f$ is not a constant function}{
+	\eIf{$\exists p \in P_f$ such that $p \subset x$}{
+		\eIf{$\exists a \in A_{f_p}$}{$f \leftarrow f_{p + a}$}
+		{\KwRet{1}}		
+	}{\KwRet{0}}
+}
+\KwRet{value of $f$}
+\caption{LTF Decision Tree Query Algorithm}
+\end{algorithm}
+
+
+We now analyse the communication complexity of the protocol that simulates this AND Decision Tree query algorithm based on the monomial complexity. By inducting on $n$, the number of input variables, we shall inductively assume that $CC(f(x \wedge y)) \leq \log^c(mon(f))$. It is then left to show that in lines 2, 3 the pivot and antipivots can be found in polylogarithmic number of queries in the number of monomials. We shall define 2 such functions. Define the function $f'(x) = 1 \iff \exists p \in P_f \ | \ p \subseteq x$ and for some fixed pivot $p \in P_f$, we define $f^p(x) = 1 \iff \exists a \in A_{f_p} \ | \ a \subseteq x$.  
+
+
+\begin{proposition}\label{prop1}
+	$f'(x)$ and $f^p(x)$ are montone 
+	\begin{proof}
+		Since there cannot be a pair of pivots (antipivots) where one is a subset of another, Fact \ref{fact1}, the set $P_f$ $(A_{f_p})$ forms a building set for the montone function. 
+	\end{proof}
+\end{proposition}
+
+The functions $f', \neg f^p$ can clearly be used directly to compute lines 2, 3 respectively in the algorithm. As per \cite{Buhrman1999,Lovasz1993}, the log-rank conjecture holds for monotone functions and thus there exists communication protocols that compute these functions in polylogarithmic number of communicated bits in the number of their monomials. It is left to show $mon(f'), mon( \neg f^p) \leq mon(f)$.
+
+We shall show a property about montone functions and their monomials before we reason about the monomial complexity of $f', \neg f^p$.
+
+\begin{lemma}\label{lemma2}
+	If $g:\{0, 1\}^n \rightarrow \{0, 1\}$ is a monotone function and let $M \subset \{0,1\}^n$ be the building set for $g$, then we have that $$g(x) = \sum_{k=1}^{|M|} \ \sum_{A \subseteq M, |A| = k} -1^{k-1} \bigcup_{x \in A} x$$ where a string represents a monomial and the union of strings is the union of their characteristic sets.
+
+	\begin{proof}
+		Consider any input $x$ in $\sup(g)$. Let $A \subseteq M$ such that $\forall a \in A, \ a \subseteq x$. We can assume that $x$ is simply a union of strings from $A$ since the suggested polynomial contains monomials only of that form. Since any monomial of the form $y \not \subseteq x$ will evaluate to 0 and every monomial $y = \bigcup_{z \in A'}z, \ A' \subseteq A$ will evaluate to 1, we will have that the polynomial reduces to $\sum_{i=1}^{|A|} -1^{i-1} \binom{|A|}{i}$. We can see that this sum evaluates to 1 by looking at the binomial expansion of  \\ $ -1((1 - 1)^{|A|} - \binom{|A|}{0}) = (\sum_{k = 0}^{|A|} -1^{k+1} \binom{|A|}{k}) + \binom{|A|}{0}$.
+	\end{proof}
+
+\end{lemma}
+
+\begin{proposition}\label{prop2}
+	The monomials of the function $f'(x), \neg f^p(x)$ are contained in those of $f(x)$; taking into account the restriction of $f$ in $f^p$. 
+	\begin{proof}
+		Let us first consider $f'$. Notice that any monomial in $f'$, as per Lemma \ref{lemma2}, is a union of pivots. For all $s \in \sup(f)$ of this form (a union of pivots), $s$ has the property that any $s' \in \sup(f), \ s' \subseteq s$ also occurs in $\sup(f')$ and vice versa. Thus, as per \ref{lemma1}, the quantity $(-1)^{\order{s}}(\order{E_s} - \order{O_s})$ is the same in $f$ and $f'$. 
+
+		Now, let us consider $\neg f^p$ where $p \in P_f$. The support of $\neg f^p$ is characterized by all $s$ such that $\not \exists a \in A_{f_p} \ | \ a \subseteq s$. By the definition of an antipivot, $(p \cup s) \in \sup(f)$. Thus, by Lemma \ref{lemma1}, any monomial $a$, which is a union of antipivots from $A_{f_p}$, must occur as $p \cup a$ in $f$. 
+	\end{proof}
+\end{proposition}
+
+
+Combining Proposition \ref{prop2} with Algorithm \ref{alg1} we have inductively shown that $CC(f \circ \wedge) \leq \log^c(mon(f))$ for $c \in O(1)$. 

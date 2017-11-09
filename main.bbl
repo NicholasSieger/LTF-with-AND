@@ -1,8 +1,23 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{2}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Buhrman and de~Wolf(1999)]{Buhrman1999}
+H.~Buhrman and R.~de~Wolf.
+\newblock {Communication Complexity Lower Bounds by Polynomials}.
+\newblock \penalty0 (Illc):\penalty0 16, 1999.
+\newblock ISSN 10930159.
+\newblock \doi{10.1109/CCC.2001.933879}.
+\newblock URL \url{http://arxiv.org/abs/cs/9910010}.
+
+\bibitem[O'Donnell(2007)]{ODonnell2007}
+R.~O'Donnell.
+\newblock \emph{{Analysis of Boolean Functions}}, volume~1.
+\newblock 2007.
+\newblock ISBN 9781107038325.
+\newblock \doi{10.1017/CBO9781139814782}.
 
 \end{thebibliography}
