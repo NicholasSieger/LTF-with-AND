@@ -13,6 +13,6 @@ We first set our notation for the relevant complexity measures. Consider an arbi
     \] be a \textit{linear threshold function} (LTF). We will assume without loss of generality that $w_0 \geq 0$. We form our communication function $F(x_1,\dots,x_n,y_1,\dots,y_n) := f(x_1\wedge y_1,x_2\wedge y_2,\dots,x_n\wedge y_n)$. 
     
     Finally, there are several relevant results to state. It is shown in \cite{Buhrman1999} that $\mathsf{rank}(M_F) = \mathsf{mon}(f)$ (Note this result holds for a general $f$, not just LTFs). In addition, it is easy to see that $\mathsf{CC}(F) \leq 2\mathsf{DT}_{\wedge}(f)$. Thus, showing the following claim implies the Log-Rank Conjecture for our class of communication functions $F$.
-    \begin{proposition}
+    \begin{proposition}\label{logRankDTC}
     	If $f$ is an LTF, $\mathsf{DF}_{\wedge}(f) \leq \log^c(\mathsf{mon}(f))$ for some $c \in \R^+$.
     \end{proposition}
