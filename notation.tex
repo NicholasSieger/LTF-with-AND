@@ -1,0 +1,18 @@
+We first set our notation for the relevant complexity measures. Consider an arbitrary boolean function $F : \set{0,1}^n\times\set{0,1}^n\to\set{0,1}$ and define $\mathsf{CC}(F)$ denote the communication complexity of $F$. For such an $F$, let $M_F$ denote its communication matrix. 
+    
+    For each subset $S\subseteq [n]$ define the polynomial $\alpha_S : \set{0,1}^n\to \set{0,1}$ by $\alpha_S(x_1,\dots,x_n) := \prod_{i\in S} x_i$ with $\alpha_\emptyset(x) = 1$. An AND decision tree is then a binary decision tree where each node makes an $\alpha_S$ query for some $S\subseteq [n]$. Such an AND decision tree $T$ decides a boolean function $f : \set{0,1}^n\to\set{0,1}$ if $T$ agrees with $f$ on all inputs $x\in \set{0,1}^n$. The AND decision tree complexity $\mathsf{DT}_{\wedge}(f)$ is the minimum depth of an AND decision tree which decides $f$. 
+    
+    Given a boolean function $f$, we will frequently write $f$ as a multilinear polynomial. It is shown in \cite{ODonnell2007} that any boolean function $f$ can uniquely written as $f(x) = \sum_{S\subseteq [n]} \hat{\alpha}[S]\alpha_S(x)$ where $\hat{\alpha}[S]$ is the coefficient of $\alpha_S(x)$. We denote by $\mathsf{mon}(f)$ be number of nonzero $\hat{\alpha}[S]$ for a function $f$. The support of a function $f$ is defined as $\mathsf{sup}(f) := f^{-1}(\set{1})$.
+    
+	We will only consider a subclass of all boolean functions $f: \set{0,1}^n\to \set{0,1}$ which we now define. Let 
+    \[
+    f(x_1,\dots,x_n) := \begin{cases}
+		1 & w_1w_1 + w_2x_2 + \dots + w_nx_n \geq w_0\\
+        0 & \text{otherwise}
+	\end{cases}
+    \] be a linear threshold function (LTF). We will assume without loss of generality that $w_0 \geq 0$. We form our communication function $F(x_1,\dots,x_n,y_1,\dots,y_n) := f(x_1\wedge y_1,x_2\wedge y_2,\dots,x_n\wedge y_n)$. 
+    
+    Finally, there are several relevant results to state. It is shown in \cite{Buhrman1999} that $\mathsf{rank}(M_F) = \mathsf{mon}(f)$ (Note this result holds for a general $f$, not just LTFs). In addition, it is easy to see that $\mathsf{CC}(F) \leq 2\mathsf{DT}_{\wedge}(f)$. Thus, showing the following claim implies the Log-Rank Conjecture for our class of communication functions $F$.
+    \begin{proposition}
+    	If $f$ is an LTF, $\mathsf{DF}_{\wedge}(f) \leq \log^c(\mathsf{mon}(f))$ for some $c \in \R^+$.
+    \end{proposition}

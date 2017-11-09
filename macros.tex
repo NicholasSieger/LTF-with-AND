@@ -1,0 +1,198 @@
+\usepackage{amsmath,amsfonts,amssymb, commath,fancyhdr,mathtools,bm,dsfont,relsize}
+\usepackage[margin= 1.1 in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm,graphicx,xifthen,dsfont}
+\usepackage[linesnumbered, noend, noline]{algorithm2e} %to write algos
+\usepackage{multicol} %package for columns
+\usepackage{mdframed} %for framed boxes
+\usepackage{pgfplots} % graphs in doc
+\usepackage{ragged2e} %for alignment of text
+\usepackage{lipsum} %random text
+\usepackage{wasysym}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{marginnote} %package for notes in margins
+\usepackage{romannum} %Roman numerals
+
+
+\allowdisplaybreaks
+
+\usepackage[square, numbers, sort]{natbib} %Bibliography stuff
+\bibliographystyle{abbrvnat}
+
+\usepackage{mathpazo}
+  
+%Tikz stuff
+\usepackage{calc}
+\usepackage{tikz}	%graphics
+\usetikzlibrary{patterns}  
+\usetikzlibrary{decorations.markings}
+\tikzstyle{vertex}=[circle, draw, inner sep=0pt, minimum size=6pt]
+\newcommand{\vertex}{\node[vertex]}
+\newcounter{Angle}
+
+%Paragraph adn Page formatting commands
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+
+%Question Command
+\newcommand{\question}[1]
+{ \noindent{Problem: \textbf{#1}} \vspace{0.5em}
+\hrule \leftskip1em}		
+
+
+\mdfdefinestyle{answerstyle}{leftmargin=10em,rightmargin=10em}
+
+%Question followed by answer in a box 
+\newenvironment{answer}[2]{\begin{description} \item{#1:  #2} \end{description}
+\begin{mdframed}[leftmargin = 1em, rightmargin = 1em]}%
+{\hspace{5em} \end{mdframed}}
+
+
+%\begin{ThmOrLemma}{Theorem / Lemma}{Statement of lemma/thm}{
+% 	Proof
+% }
+% \end{ThmOrLemma}
+\newenvironment{ThmOrLemma}[2]{
+\begin{mdframed}[leftmargin = 1em, rightmargin = 1em]
+	\begin{description}[leftmargin = 0em, rightmargin = 0em]
+		\begin{flushleft} \item{\textbf{#1}:} #2 \end{flushleft}
+ 	\end{description}
+\begin{flushleft} \textit{Proof}: \ \ }%
+{\hspace{5em} \end{flushleft} \qed \end{mdframed}}
+
+\renewcommand{\part}[1] {\vspace{.10in} {#1.}}
+
+%General commands
+\newcommand{\id}{\mathds{1}}
+\newcommand{\ones}{\vec{\boldsymbol{1}}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}	
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}[1]{\ifthenelse{\isempty{#1}}{\mathbb{F}}{\mathbb{F}_{#1}}} %Field_k
+\newcommand{\e}{\epsilon}
+\newcommand{\nfrac}[2]{\left(\frac{#1}{#2}\right)} %fractions with correct size brackets. 
+\newcommand{\brackets}[1]{\left(#1\right)} %Expression with correct size brackets. 
+\newcommand{\sbrackets}[1]{\left[#1\right]} %Expression with correct square brackets. 
+\newcommand{\seq}[1]{\langle #1 \rangle} %expression for sequences.
+\renewcommand{\exp}[1]{\text{exp}\brackets{#1}} %Expression for exponentials 
+\newcommand\Eval[3]{\left.#1\right\rvert_{#2}^{#3}} %Evaluation of integral 
+\newcommand{\dotp}[2]{\left \langle #1 \ , \ #2 \right \rangle} %A vector.
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\newcommand{\RNum}[1]{\Romannum{#1}}%Roman numeral
+\newcommand{\mnote}[1]{\marginnote{\tiny #1}[0cm] }
+
+
+
+
+
+%Bold face
+\newcommand{\bA}{\boldsymbol{A}}
+\newcommand{\bB}{\boldsymbol{B}}
+\newcommand{\bC}{\boldsymbol{C}}
+\newcommand{\bD}{\boldsymbol{D}}
+\newcommand{\bE}{\boldsymbol{E}}
+\newcommand{\bF}{\boldsymbol{F}}
+\newcommand{\bG}{\boldsymbol{G}}
+\newcommand{\bH}{\boldsymbol{H}}
+\newcommand{\bI}{\boldsymbol{I}}
+\newcommand{\bJ}{\boldsymbol{J}}
+\newcommand{\bL}{\boldsymbol{L}}
+\newcommand{\bP}{\boldsymbol{P}}
+\newcommand{\bR}{\boldsymbol{R}}
+\newcommand{\bS}{\boldsymbol{S}}
+\newcommand{\bT}{\boldsymbol{T}}
+\newcommand{\bU}{\boldsymbol{U}}
+\newcommand{\bV}{\boldsymbol{V}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\bY}{\boldsymbol{Y}}
+\newcommand{\bZ}{\boldsymbol{Z}}
+\renewcommand{\bm}{\boldsymbol{m}}
+\newcommand{\bw}{\boldsymbol{w}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\be}{\boldsymbol{e}}
+
+%Curvy for set families
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Xc}{\mathcal{X}}
+\newcommand{\Yc}{\mathcal{Y}} 
+\newcommand{\Uc}{\mathcal{U}}
+\newcommand{\Ic}{\mathcal{I}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\Jc}{\mathcal{J}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Tc}{\mathcal{T}}
+\newcommand{\Pc}{\mathcal{P}}
+
+
+%Linear Algebra Commands
+\newcommand{\inorm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\twonorm}[1]{\left \Vert #1 \right\Vert_2}
+\newcommand{\fnorm}[1]{\Vert #1 \Vert_F}
+\newcommand{\iprod}[2]{\ifthenelse{\isempty{#1}}{\langle \cdot,\cdot\rangle}{\langle#1,#2\rangle}}
+\newcommand{\trace}[1]{\mathsf{trace}(#1)}
+\newcommand{\rank}[1]{\mathsf{rank}(#1)}
+\newcommand{\tr}[1]{\mathsf{tr}(#1)}
+
+	
+%Probability commands
+\newcommand{\Prob}[1]{\textbf{Pr}\left[{#1}\right]}
+
+\newcommand{\Exp}[1]{\textbf{E}\left[{#1}\right]}
+\newcommand{\ExSub}[2]{\underset{#1}{\textbf{E}}\left[{#2}\right]}
+\newcommand{\PrSub}[2]{\underset{#1}{\textbf{P}}\left[{#2}\right]}
+\newcommand{\Ex}{\mathbb{E}}
+\newcommand{\Var}[1]{\mathop{\bf Var\/}\left[#1\right]}
+\newcommand{\Cov}[2]{\sigma\left(#1,#2\right)}
+	
+%Analysis Commands
+\newcommand{\evals}[2]{\bigg\vert_{#1}^{#2}}
+\newcommand{\limit}[2]{\lim_{#1\to#2}}
+\newcommand{\dell}[2]{\frac{\partial #1}{\partial #2}} %Partial derivatives[d#1/d#2]
+	
+%algebra commands
+\newcommand{\order}[1]{\vert #1\vert}
+\newcommand{\zmod}[1]{\Z/#1\Z}
+\newcommand{\gmod}[2]{#1/#2}
+
+%BigO
+\newcommand{\bigO}[1]{O\brackets{#1}}
+\newcommand{\bigtheta}[1]{\Theta \left(#1 \right)}
+\newcommand{\bigomega}[1]{\Omega \left(#1 \right)}
+
+\theoremstyle{definition}
+\newtheorem{observation}{Observation}
+
+%theorem environments
+\theoremstyle{plain}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{algo}[theorem]{Algorithm}
+
+% \setcounter{section}{1}
+
+
+
+
