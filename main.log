@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 NOV 2017 21:39
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 NOV 2017 21:36
+>>>>>>> Stashed changes
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1624,8 +1628,20 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 6.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+<<<<<<< Updated upstream
 ))
 (./main_proof.tex [2]
+=======
+)
+Overfull \hbox (6.59517pt too wide) in paragraph at lines 15--17
+\OT1/ppl/m/n/10 We anal-yse the poly-no-mial ex-pan-sion for each $\U/dsrom/m/n
+/10 1[]\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/zplm/m/n/10 )$\OT1/ppl/m/n/10 
+. The ex-pan-sion is given by the prod-uct $[][]\OT1/zplm/m/n/10 (\OT1/ppl/m/n/
+10 1 \OMS/zplm/m/n/10 ^^@
+ []
+
+) (./main_proof.tex [2]
+>>>>>>> Stashed changes
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 30.
  [3]
@@ -1667,10 +1683,17 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< Updated upstream
  36403 strings out of 493089
  804462 string characters out of 6134842
  1072280 words of memory out of 5000000
  39161 multiletter control sequences out of 15000+600000
+=======
+ 36402 strings out of 493089
+ 804450 string characters out of 6134842
+ 1072252 words of memory out of 5000000
+ 39160 multiletter control sequences out of 15000+600000
+>>>>>>> Stashed changes
  52318 words of font info for 161 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,18n,77p,10449b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1688,7 +1711,11 @@ mf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/urw/palatino/uplri8a.pfb>
+<<<<<<< Updated upstream
 Output written on main.pdf (5 pages, 144576 bytes).
+=======
+Output written on main.pdf (5 pages, 144681 bytes).
+>>>>>>> Stashed changes
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams
