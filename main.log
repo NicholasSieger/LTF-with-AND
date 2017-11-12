@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 NOV 2017 21:39
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 NOV 2017 21:36
->>>>>>> Stashed changes
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 NOV 2017 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1568,17 +1564,17 @@ LaTeX Font Info:    Try loading font information for OMX+zplm on input line 14.
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 18.00587pt on input line 14.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 12.50409pt on input line 14.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 14.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 14.
+(Font)              scaled to size 10.42007pt on input line 14.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 18.00587pt on input line 14.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 12.50409pt on input line 14.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 14.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 14.
+(Font)              scaled to size 10.42007pt on input line 14.
 LaTeX Font Info:    Try loading font information for U+wasy on input line 14.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/wasysym/uwasy.fd
@@ -1590,6 +1586,14 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 14.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 14.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 14.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 14.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 14.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1601,13 +1605,9 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 
 (./introduction.tex) (./notation.tex
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 1.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 1.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 1.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 1.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 1.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
@@ -1628,20 +1628,15 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 6.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-<<<<<<< Updated upstream
-))
-(./main_proof.tex [2]
-=======
 )
-Overfull \hbox (6.59517pt too wide) in paragraph at lines 15--17
-\OT1/ppl/m/n/10 We anal-yse the poly-no-mial ex-pan-sion for each $\U/dsrom/m/n
-/10 1[]\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/zplm/m/n/10 )$\OT1/ppl/m/n/10 
-. The ex-pan-sion is given by the prod-uct $[][]\OT1/zplm/m/n/10 (\OT1/ppl/m/n/
-10 1 \OMS/zplm/m/n/10 ^^@
+Overfull \hbox (6.59517pt too wide) in paragraph at lines 17--18
+[]\OT1/ppl/m/n/10 We anal-yse the poly-no-mial ex-pan-sion for each $\U/dsrom/m
+/n/10 1[]\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/zplm/m/n/10 )$\OT1/ppl/m/n/1
+0 . The ex-pan-sion is given by the prod-uct $[][]\OT1/zplm/m/n/10 (\OT1/ppl/m/
+n/10 1 \OMS/zplm/m/n/10 ^^@
  []
 
 ) (./main_proof.tex [2]
->>>>>>> Stashed changes
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 30.
  [3]
@@ -1675,7 +1670,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 29.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FA0D131953303F0500D6C6E3294D4BCE;262.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 87527D9657BC1CDEF1AF67217D2148FC;223.
+(rerunfilecheck)             Checksum: 5B92712E14DA8A93FF076CC08806F148;222.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1683,18 +1678,11 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< Updated upstream
- 36403 strings out of 493089
- 804462 string characters out of 6134842
- 1072280 words of memory out of 5000000
- 39161 multiletter control sequences out of 15000+600000
-=======
- 36402 strings out of 493089
- 804450 string characters out of 6134842
- 1072252 words of memory out of 5000000
- 39160 multiletter control sequences out of 15000+600000
->>>>>>> Stashed changes
- 52318 words of font info for 161 fonts, out of 8000000 for 9000
+ 36417 strings out of 493089
+ 804665 string characters out of 6134842
+ 1071278 words of memory out of 5000000
+ 39172 multiletter control sequences out of 15000+600000
+ 56126 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,18n,77p,10449b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1702,23 +1690,20 @@ exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
-1/urw/palatino/uplri8a.pfb>
-<<<<<<< Updated upstream
-Output written on main.pdf (5 pages, 144576 bytes).
-=======
-Output written on main.pdf (5 pages, 144681 bytes).
->>>>>>> Stashed changes
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+urw/palatino/uplri8a.pfb>
+Output written on main.pdf (5 pages, 151947 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 158 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  34 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

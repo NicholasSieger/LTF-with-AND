@@ -1,30 +1,16 @@
 # Fdb version 3
-<<<<<<< Updated upstream
-["bibtex main"] 1510195144 "main.aux" "main.bbl" "main" 1510195146
+["bibtex main"] 1510195463 "main.aux" "main.bbl" "main" 1510459497
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1233624470 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
-  "main.aux" 1510195145 2218 85159fb95ab19bcdb0e3cd7adac37a13 ""
-=======
-["bibtex main"] 1510194572 "main.aux" "main.bbl" "main" 1510195001
-  "/usr/local/texlive/2015/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1233624470 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
-  "main.aux" 1510195001 2168 12d1b84cb6387b4d83602af3b848fbda ""
->>>>>>> Stashed changes
+  "main.aux" 1510459496 2216 cf9c3f974d02307e11237fc4905d9d91 ""
   "main.bcf" 0 -1 0 ""
   "paper.bib" 1510193630 3576 334702be09ad1ca14ee4bfd8339c0c3c ""
   (generated)
-  "main.blg"
   "main.bbl"
-<<<<<<< Updated upstream
   "main.blg"
-["pdflatex"] 1510195144 "main.tex" "main.pdf" "main" 1510195146
-  "./main.brf" 1510195145 223 87527d9657bc1cdef1af67217d2148fc ""
-  "./main.out" 1510195145 262 fa0d131953303f0500d6c6e3294d4bce ""
-=======
-["pdflatex"] 1510194999 "main.tex" "main.pdf" "main" 1510195001
-  "./main.brf" 1510195001 223 87527d9657bc1cdef1af67217d2148fc ""
-  "./main.out" 1510195001 262 fa0d131953303f0500d6c6e3294d4bce ""
->>>>>>> Stashed changes
+["pdflatex"] 1510459495 "main.tex" "main.pdf" "main" 1510459497
+  "./main.brf" 1510459496 222 5b92712e14da8a93ff076cc08806f148 ""
+  "./main.out" 1510459496 262 fa0d131953303f0500d6c6e3294d4bce ""
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm" 1136768653 1616 371d1ee60c04b008c8fd760060cd34f1 ""
@@ -59,6 +45,7 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmss9.tfm" 1136768653 1320 49357c421c0d469f88b867dd0c3d10e8 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm" 1136768653 452 168d896d9b2ead965bf08c9db69c947f ""
@@ -80,6 +67,7 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb" 1248133631 24373 a91d375736817a75026663adcb2190c1 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb" 1136849748 17014 61891910dfe21ad76f9789fdafdd860e ""
@@ -306,38 +294,26 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1432479681 3849859 39a7d258195bde2394e244961601fbc5 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-<<<<<<< Updated upstream
-  "introduction.tex" 1510195066 6 5652972aa9a43625f1b1d4743adcd0d7 ""
+  "introduction.tex" 1510195348 0 d41d8cd98f00b204e9800998ecf8427e ""
   "macros.tex" 1510193630 6302 33104e7c5b1906efcd66ed3800db9546 ""
-  "main.aux" 1510195145 2218 85159fb95ab19bcdb0e3cd7adac37a13 ""
-  "main.bbl" 1510195144 787 14ba00abc9749d449019192c38763a02 "bibtex main"
-  "main.brf" 1510195145 223 87527d9657bc1cdef1af67217d2148fc ""
-  "main.out" 1510195145 262 fa0d131953303f0500d6c6e3294d4bce ""
-  "main.tex" 1510195142 1660 73f82b0645fc73abab3fc30a5e8f518d ""
+  "main.aux" 1510459496 2216 cf9c3f974d02307e11237fc4905d9d91 ""
+  "main.bbl" 1510195463 787 14ba00abc9749d449019192c38763a02 "bibtex main"
+  "main.brf" 1510459496 222 5b92712e14da8a93ff076cc08806f148 ""
+  "main.out" 1510459496 262 fa0d131953303f0500d6c6e3294d4bce ""
+  "main.tex" 1510459453 1762 674b3a1c4cd6976b7b9984c2be9b05a5 ""
   "main_proof.tex" 1510193969 6274 0d14f0e59d2490ee45c56dd01bd012f4 ""
-  "monomials.tex" 1510195138 2225 af31e06592751371c40ee57062c5b922 ""
-  "notation.tex" 1510195072 2426 f7e5f1a786d4b48eb3d53af65149544c ""
+  "monomials.tex" 1510197241 2490 7a3690386499bcebb9746b8bdfdef61c ""
+  "notation.tex" 1510459492 2463 ffeec1fa075331a91f8e7052d9ea97fd ""
   (generated)
+  "notation.tex"
+  "macros.tex"
+  "monomials.tex"
+  "main_proof.tex"
   "main.log"
-  "main.out"
-  "main.aux"
-  "main.brf"
+  "introduction.tex"
   "main.pdf"
-=======
-  "introduction.tex" 1510194200 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "macros.tex" 1510193630 6302 33104e7c5b1906efcd66ed3800db9546 ""
-  "main.aux" 1510195001 2168 12d1b84cb6387b4d83602af3b848fbda ""
-  "main.bbl" 1510194572 787 14ba00abc9749d449019192c38763a02 "bibtex main"
-  "main.brf" 1510195001 223 87527d9657bc1cdef1af67217d2148fc ""
-  "main.out" 1510195001 262 fa0d131953303f0500d6c6e3294d4bce ""
-  "main.tex" 1510194999 1660 73f82b0645fc73abab3fc30a5e8f518d ""
-  "main_proof.tex" 1510193969 6274 0d14f0e59d2490ee45c56dd01bd012f4 ""
-  "monomials.tex" 1510194996 2439 fbce35cd6e2a8346e37e6ba96a8a2849 ""
-  "notation.tex" 1510193630 2408 ee52e708e739702a077d4655782f9972 ""
-  (generated)
-  "main.brf"
   "main.aux"
-  "main.pdf"
   "main.out"
-  "main.log"
->>>>>>> Stashed changes
+  "main.brf"
+  "main.tex"
+  "main.bbl"
