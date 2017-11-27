@@ -67,3 +67,88 @@ We shall show a property about montone functions and their monomials before we r
 
 
 Combining Proposition \ref{prop2} with Algorithm \ref{alg1} we have inductively shown that $CC(f \circ \wedge) \leq \log^c(mon(f))$ for $c \in O(1)$. 
+
+\hrule
+For $\vec{x}\in\F{2}^n$ we define $\vec{x}_{-i} := \vec{x} + 1_i$. 
+\begin{definition}\label{pivot}
+	Consider $f : \F{2}^n \to \F{2}$. We say that $\vec{x}\in \F{2}^n$ is a \text{pivot of $f$} if $f(\vec{x}) = 1$ and for any $i$ if $\vec{x}_i = 1$ then $f(\vec{x}_{-i}) = 0$.
+\end{definition}
+\begin{definition}\label{antipviot}
+	Consider $f : \F{2}^n \to \F{2}$. We say that $\vec{x}\in \F{2}^n$ is a \text{antipivot of $f$} if $f(\vec{x}) = 1$ and for any $i$ if $\vec{x}_i = 0$ then $f(\vec{x}_{-i}) = 0$.
+\end{definition}
+\begin{definition}\label{convex cube}
+	Let $f : \{0,1\}\to\{0,1\}$ be a boolean function. We say that $f$ is \textit{convex on the hypercube} if for $\vec{x},\vec{y}\in \mathsf{supp}(f)$ there is a shortest path $P$ between the vertices $x,y$ on the hypercube and every vertex of $P$ is also in $\mathsf{supp}(f)$
+\end{definition}
+\begin{lemma}
+	LTFs are convex on the hypercube.
+\end{lemma}
+\begin{proof}
+	Let $f(\vec{z}) = \iprod{\vec{w}}{\vec{z}} \geq w_0$ be a linear threshold function. and let $\vec{x},\vec{y}$ be arbitrary vertices of the hypercube $H^n$. Without loss of generality, we can take $\vec{x} = \vec{0}$. To see this, rotate the hypercube and relabel the vertices $\vec{z}\in H^n$ by $\vec{z}\to \vec{z} + \vec{x}$ (where addition is taken over $\F{2}^n$). Then consider $f'(\vec{z}) = \iprod{\vec{w}}{\vec{z} + \vec{x}} \geq w_0$, which is again an LTF. FILL IN MORE DETAILS
+	
+	Take the subcube $C_{\vec{y}} \subseteq H^n$ formed by all $\vec{z} \leq \vec{y}$ (under the hamming order). Clearly, $C_{\vec{y}}$ contains all shortest paths from $\vec{0}$ to $\vec{y}$. Let $i_1,i_2,\dots,i_k$ be the nonzero indices of $\vec{y}$ ordered such that $w_{i_1} \geq w_{i_2} \geq \dots \geq w_{i_k}$. Consider the shortest 
+	
+	
+\end{proof}
+\begin{lemma}\label{leave support}
+	Let $f$ be an LTF and $\vec{a}$ an antipivot of $f$.If $\vec{x} \geq \vec{a}$ in the Hamming order, then $f(\vec{x}) = 0$.
+\end{lemma}
+\begin{proof}
+	Assume not, and let $\vec{x}\in \mathsf{supp}(f)$ satisfy $\vec{a} \leq \vec{x}$ for some antipivot $\vec{a}$. By \ref{convex cube} some shortest path between $\vec{x}$ and $\vec{a}$ must be part of the support. Thus, $\vec{a}_{-i}\in\mathsf{supp}(f)$ for some $i$, contradicting the definition of antipivot \ref{antipviot}. 
+\end{proof}
+\begin{lemma}\label{enter support}
+	Let $f$ be an LTF and $\vec{p}$ a pivot of $f$.If $\vec{x} \leq \vec{p}$ in the Hamming order, then $f(\vec{x}) = 0$.
+\end{lemma}
+\begin{proof}
+	
+\end{proof}
+
+
+\begin{definition}\label{defmonoparts}
+		Let $f$ be an LTF. Define 
+	\begin{align*}
+	f^+(\vec{x}) := \begin{cases}
+	1 & \vec{x} \geq \vec{p}~ \text{for some pivot $\vec{p}$ of $f$}\\
+	0 & \text{otherwise}
+	\end{cases}\\
+	f^-(\vec{x}) := \begin{cases}
+	1 & \vec{x} > \vec{a}~ \text{for some antipivot $\vec{a}$ of $f$}\\
+	0 & \text{otherwise}
+	\end{cases}\\
+	\end{align*}
+\end{definition}
+\begin{proposition}\label{mono parts are mono}
+	$f_+,f_-$ are monotone.
+\end{proposition}
+\begin{proof}
+	This follows from the transitivity of the hamming order.
+\end{proof}
+
+\begin{proposition}\label{mono parts are parts}
+	$f(\vec{x}) = f^+(\vec{x})*(1 +  f_-(\vec{x}))$
+\end{proposition}
+\begin{proof}
+	By \ref{enter support} and \ref{leave support}, 
+\end{proof}
+\begin{corollary}\label{rank bound}
+	Let $F,F_+,F_-$ be the communication functions formed by $f,f_+,f_-$ respectively, and $M_F,M_+,M_-$ their corresponding communication matrices. Then 
+	\[
+		\rank{M_F}=\rank{M_+} *(1 + \rank{M_-}) = \Theta(\rank{M_+}\rank{M_-})
+	\].
+\end{corollary}
+\begin{proof}
+	By \ref{mono parts are parts} and the uniqueness of multilinear representations, $\mathsf{mon}(f) = \mathsf{mon}(f_+)(1 + \mathsf{mon}(f_-))$. By \cite{Buhrman1999}, 
+	\[
+		\rank{M_F} = \mathsf{mon}(f) = \mathsf{mon}(f_+)(1 + \mathsf{mon}(f_-) = \rank{M_+}(1 + \rank{M_-}) = \Theta(\rank{M_+}\rank{M_-})
+	\]
+\end{proof}
+We can now combine all these parts to prove our main claim.
+\begin{proof}[proof of \ref{mainresult}]
+	By \ref{mono parts are mono}, there are protocols $P_+,P_-$ for $F_+,F_-$ such that $P_+$ communicates $O(\mathsf{polylog}(\rank{M_+}))$ bits and $P_-$ communicates $O(\mathsf{polylog}(\rank{M_-}))$ bits. By \ref{mono parts are parts}, we can form the following protocol. First run $P_+$ on the input $\vec{x}$. If $\vec{x} \leq \vec{p}$ for some pivot $\vec{p}$, we return $0$. Otherwise, run $P_-$. If $\vec{x} \geq \vec{a}$ for some antipivot $\vec{a}$, we can return $0$. Otherwise, return $1$. Thus, 
+	\begin{align*}
+		CC(F) &\leq CC(F_+) + CC(F_-)\\
+		 &\leq O(\mathsf{polylog}(\rank{M_+})) + \mathsf{polylog}(\rank{M_-}))\\
+		 \intertext{By \ref{rank bound} and submodularity}
+		 &\leq O\left(\mathsf{polylog}(\rank{M_+}\rank{M_-})\right)
+	\end{align*}
+\end{proof}
+

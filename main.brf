@@ -1,5 +1,13 @@
-\backcite {ODonnell2007}{{i}{2}{section.2}}
+\backcite {Lovasz1988}{{i}{1}{section.1}}
+\backcite {Lovett2013}{{i}{1}{section.1}}
+\backcite {Goos2015}{{i}{1}{section.1}}
+\backcite {Tsang2013}{{i}{1}{section.1}}
+\backcite {Lovett2016}{{i}{1}{section.1}}
+\backcite {Lovett2016}{{i}{1}{section.1}}
+\backcite {ODonnell2007}{{ii}{2}{section.2}}
 \backcite {Buhrman1999}{{ii}{2}{section.2}}
 \backcite {Buhrman1999}{{iii}{4}{section.4}}
 \backcite {Buhrman1999}{{iv}{9}{theorem.4.4}}
-\backcite {Buhrman1999}{{v}{5}{section.5}}
+\backcite {Lovasz1993}{{iv}{9}{theorem.4.4}}
+\backcite {Buhrman1999}{{vi}{9}{theorem.4.16}}
+\backcite {Buhrman1999}{{vi}{5}{section.5}}

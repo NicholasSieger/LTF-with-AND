@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,17 +7,68 @@
 
 \bibitem[Buhrman and de~Wolf(1999)]{Buhrman1999}
 H.~Buhrman and R.~de~Wolf.
-\newblock {Communication Complexity Lower Bounds by Polynomials}.
+\newblock Communication complexity lower bounds by polynomials.
 \newblock \penalty0 (Illc):\penalty0 16, 1999.
 \newblock ISSN 10930159.
 \newblock \doi{10.1109/CCC.2001.933879}.
 \newblock URL \url{http://arxiv.org/abs/cs/9910010}.
 
+\bibitem[Goos et~al.(2015)Goos, Pitassi, and Watson]{Goos2015}
+M.~Goos, T.~Pitassi, and T.~Watson.
+\newblock Deterministic communication vs. partition number.
+\newblock In \emph{2015 IEEE 56th Annual Symposium on Foundations of Computer
+  Science}, volume 2015-Decem, pages 1077--1088. IEEE, oct 2015.
+\newblock ISBN 978-1-4673-8191-8.
+\newblock \doi{10.1109/FOCS.2015.70}.
+\newblock URL \url{http://ieeexplore.ieee.org/document/7354444/}.
+
+\bibitem[Lovasz and Saks(1988)]{Lovasz1988}
+L.~Lovasz and M.~Saks.
+\newblock Lattices, mobius functions and communications complexity.
+\newblock In \emph{[Proceedings 1988] 29th Annual Symposium on Foundations of
+  Computer Science}, pages 81--90. IEEE, 1988.
+\newblock ISBN 0-8186-0877-3.
+\newblock \doi{10.1109/SFCS.1988.21924}.
+\newblock URL \url{http://ieeexplore.ieee.org/document/21924/}.
+
+\bibitem[Lovasz and Saks(1993)]{Lovasz1993}
+L.~Lovasz and M.~Saks.
+\newblock Communication complexity and combinatorial lattice theory.
+\newblock \emph{Journal of Computer and System Sciences}, 47\penalty0
+  (2):\penalty0 322--349, 1993.
+\newblock ISSN 10902724.
+\newblock \doi{10.1016/0022-0000(93)90035-U}.
+
+\bibitem[Lovett(2016{\natexlab{a}})]{Lovett2013}
+S.~Lovett.
+\newblock Communication is bounded by root of rank.
+\newblock \emph{Journal of the ACM}, 63\penalty0 (1):\penalty0 1:1--1:9,
+  2016{\natexlab{a}}.
+\newblock ISSN 00045411.
+\newblock \doi{10.1145/2591796.2591799}.
+\newblock URL
+  \url{http://10.0.4.121/2724704{\%}255Cnhttp://search.ebscohost.com/login.aspx?direct=true{\&}db=buh{\&}AN=113046637{\&}site=ehost-live}.
+
+\bibitem[Lovett(2016{\natexlab{b}})]{Lovett2016}
+S.~Lovett.
+\newblock The fourier structure of low degree polynomials.
+\newblock \emph{Electronic Colloquim on Computational Complexity}, 25\penalty0
+  (25):\penalty0 1--17, feb 2016{\natexlab{b}}.
+\newblock URL \url{http://arxiv.org/abs/1603.00002}.
+
 \bibitem[O'Donnell(2007)]{ODonnell2007}
 R.~O'Donnell.
-\newblock \emph{{Analysis of Boolean Functions}}, volume~1.
+\newblock \emph{Analysis of Boolean Functions}, volume~1.
 \newblock 2007.
 \newblock ISBN 9781107038325.
 \newblock \doi{10.1017/CBO9781139814782}.
+
+\bibitem[Tsang et~al.(2013)Tsang, Wong, Xie, and Zhang]{Tsang2013}
+H.~Y. Tsang, C.~H. Wong, N.~Xie, and S.~Zhang.
+\newblock Fourier sparsity, spectral norm, and the log-rank conjecture.
+\newblock pages 0--24, 2013.
+\newblock ISSN 02725428.
+\newblock \doi{10.1109/FOCS.2013.76}.
+\newblock URL \url{http://arxiv.org/abs/1304.1245}.
 
 \end{thebibliography}
