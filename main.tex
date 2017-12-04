@@ -12,7 +12,7 @@
 \begin{document}
 	\maketitle
 	\begin{abstract}
-		In this paper, we show that the Log-rank conjecture holds for linear threshold functions (LTFs) of the form $f \circ \wedge$. The result relies on conjecture holding for montone functions of the same form. We show that any LTF can be recursively broken down into montone functions. We further explore the multilinear polynomial of functions of the form $f \circ \wedge$ and give characterizations of its the monomial complexity in terms of the support of the function. We further suggest an algorithm in the \textsf{AND} decision tree setting to decide a boolean LTF.
+		In this note, we work towards showing the Log-rank conjecture holds for linear threshold functions (LTFs) of the form $f \circ \wedge$. The result relies on conjecture holding for monotone functions of the same form. We show that any LTF can be recursively broken down into monotone functions. We further explore the multilinear polynomial of functions of the form $f \circ \wedge$ and give characterizations of its the monomial complexity in terms of the support of the function and argue that it is made of monotone parts. Based on the characterization of the polynomial, we suggest an algorithm in the \textsf{AND} decision tree setting to decide a boolean LTF which can be simulated by a communication protocol. Additionally, we show that each round of the communication protocol is at most polynomial in the rank of the function matrix.  
 	\end{abstract}
 	\section{Introduction}
 	\input{introduction.tex}
@@ -23,7 +23,10 @@
 	\section{Breaking Down LTFs}
 	\input{main_proof.tex}
 	\section{Conclusion}
-	Using subroutines for monotone functions in an iteration for which the log-rank conjecture holds, we have inductively shown that the log-rank conjecture holds for all LTFs of the form $f \circ \wedge$. Although this result heavily uses a previous result, we conjecture that this algorithm is the optimum  AND Decision Tree algorithm. Our result uses \cite{Buhrman1999} to show the log-rank conjecture for the communication complexity. An interesting problem would be to show it holds for the AND Decision Tree complexity also. 
+	It is left to show in the analysis of our algorithm that the monomial complexity of our function drops sufficiently fast enough. Although unable to complete this analysis we conjecture that this query algorithm when simulated by a communication protocol is $\textsf{poly}\log(\textsf{rank } M_f)$. Notice that a subroutine used by our algorithm is a communication protocol that computes a monotone function. Hence, it is not clear that this subroutine can be computed with few queries in the $\textsf{DT}_\wedge$ setting.Thus, an interesting problem would be to show that the Log-Rank conjecture holds for the AND Decision Tree complexity also. A stepping-stone in showing this would be to give an explicit algorithm for monotone functions for which $\textsf{DT}_\wedge(f) \leq \textsf{poly}\log(\textsf{mon } f)$. 
+
+	\newpage
+	
 	\bibliographystyle{alpha}
 	\bibliography{paper}
 \end{document}	

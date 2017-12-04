@@ -1,30 +1,28 @@
-In this section we show how an LTF can be broken down into monotone and antimonotone functions. We provide an AND Decision Tree algorithm to compute an LTF based on this decomposition and then conclude that there exists a communication protocol that computes the LTF, formed by bitwise $\wedge$ of the inputs to Alice and Bob, that is polylogarithmic in the monomial complexity of the LTF.  Since $\text{rank}({M_{f_{\wedge}}}) = mon(f_{\wedge})$ from \cite{Buhrman1999}, we have that the Log-rank holds for LTFs of the mentioned form.
+In this section we show how an LTF can be broken down into monotone and antimonotone functions. We provide an \textsf{AND} Decision Tree algorithm to compute an LTF based on this decomposition. We use the fact that the Log-Rank holds for monotone functions as and algorithm to compute them as a subroutine for our query algorithm. We then characterize the polynomials of LTFs showing that they're `made up' of the monotone and antimonotone functions we used to compute it.
 
-Throughout this section we will assume that $f$ is a linear threshold function (LTF) of the form $f(x) = w_1x_1 + ... w_nx_n > w_0$. We assume  without loss of generality that $w_0 \geq 0$. 
-
-For an input $x$, we will denote $W_f(x)$ to denote the set $\{w_i \ | \ x_i = 1\}$ for the LTF $f$. Naturally, we define $W^+_f(x)$ to be subset of $W_f(x)$ that has positive weights and correspondingly we define $W^-_f(x)$. Similarly, we define $x^+$ and $x^-$ to be the substrings that correspond to the weights.
+Throughout this section we will assume that $f$ is a linear threshold function (LTF) of the form $f(x) = w_1x_1 + ... w_nx_n > w_0$. We assume  without loss of generality that $w_0 \geq 0$. For an input $x$, we will denote $W_f(x)$ to denote the set $\{w_i \ | \ x_i = 1\}$ for the LTF $f$. We then define $W^+_f(x)$ to be subset of $W_f(x)$ that has positive weights and correspondingly we define $W^-_f(x)$. Similarly, we define $x^+$ and $x^-$ to be the substrings of $x$ that correspond to the positive and negative weights respectively.
 
 \begin{definition}
-	An input $x$ is a $pivot$ if $f(x) = 1$ and for any $x_i = 1$, flipping $x_i$ to $0$, $x^{-i}$, causes the function value to flip, $f(x^{-i}) = 0$. 
+	An input $x$ is a $\mathsf{pivot}$ if $f(x) = 1$ and for any $x_i = 1$, flipping $x_i$ to $0$, i.e. $x^{-i}$, causes the function value to flip, i.e. $f(x^{-i}) = 0$. 
 \end{definition}
 
 \begin{definition}
-	An input $x$ is an $antipivot$ if $f(x) = 0$ and for any $x_i = 1, w_i < 0$, we have that $f(x^{-i}) = 1$. 
+	An input $x$ is an $\mathsf{antipivot}$ if $f(x) = 0$ and for any $x_i = 1$ and $w_i < 0$, we have that $f(x^{-i}) = 1$. 
 \end{definition}
 
 \begin{fact}\label{fact1}
 	There does not exist an input $x'$ and a pivot $x$ such that $S_{x'} \subset S_x$ and $f(x') = 1$. Similarly, this extends to bits corresponding to negative weights in antipivots. 
 \end{fact}
 
-The concept of function restrictions easily extends to LTFs. We shall consider the restrictions that restrict some of the input bits to $1$. Let $f_x$ be defined as the function that is restricted to the $0$ bits of $x$. Clearly, the restricted function $f_x$ has weights $\{w_1, ..., w_n\} \backslash W_f(x)$ and has the condition that the linear combination of weights must be more than $w_0 - \sum_{w_i \in W_f(x)} w_i$. Notice that now that this expression is negative. We will define $P_f, A_f$ to the set of inputs $x$ for $f$ that are pivots and antipivots respectively. 
+The concept of function restrictions easily extends to LTFs. We shall consider the restrictions that restrict some of the input bits to $1$. Let $f_x$ be defined as the function that is restricted to the $0$ bits of $x$. Clearly, the restricted function $f_x$ has weights $\{w_1, ..., w_n\} \backslash W_f(x)$ and has the condition that the linear combination of weights must be more than $w_0 - \sum_{w_i \in W_f(x)} w_i$. Notice that now that this expression is negative for any LTF that has non-zero support. We will define the sets $P_f, A_f$ to be the set of inputs $x$ for $f$ that are pivots and antipivots respectively. 
 
-We are now ready to propose the AND Decision Tree (ADT) algorithm that computes $f(x)$. 
+We are now ready to propose the \textsf{AND} Decision Tree (ADT) algorithm that computes $f(x)$. 
 
 \begin{algorithm}[H]\label{alg1}
 \KwIn{$x \in \{0, 1^n\}$}
 \While{$f$ is not a constant function}{
 	\eIf{$\exists p \in P_f$ such that $p \subset x$}{
-		\eIf{$\exists a \in A_{f_p}$}{$f \leftarrow f_{p + a}$}
+		\eIf{$\exists a \in A_{f_p}$ such that $a \subset x$}{$f \leftarrow f_{p + a}$}
 		{\KwRet{1}}		
 	}{\KwRet{0}}
 }
@@ -33,25 +31,27 @@ We are now ready to propose the AND Decision Tree (ADT) algorithm that computes 
 \end{algorithm}
 
 
-We now analyse the communication complexity of the protocol that simulates this AND Decision Tree query algorithm based on the monomial complexity. By inducting on $n$, the number of input variables, we shall inductively assume that $CC(f(x \wedge y)) \leq \log^c(mon(f))$. It is then left to show that in lines 2, 3 the pivot and antipivots can be found in polylogarithmic number of queries in the number of monomials. We shall define 2 such functions. Define the function $f'(x) = 1 \iff \exists p \in P_f \ | \ p \subseteq x$ and for some fixed pivot $p \in P_f$, we define $f^p(x) = 1 \iff \exists a \in A_{f_p} \ | \ a \subseteq x$.  
+We now analyse the communication complexity of the protocol that simulates this \textsf{AND} Decision Tree query algorithm based on the monomial complexity. Let us first show that in lines 2, 3 the pivot and antipivots can be found in polylogarithmic number of queries in the number of monomials of the original function $f$. To do so, we shall define two functions; define the function $f'(x) = 1 \iff \exists p \in P_f \ | \ p \subseteq x$ and for some fixed pivot $p \in P_f$, we define $f^p(x) = 1 \iff \exists a \in A_{f_p} \ | \ a \subseteq x$.  
 
 
 \begin{proposition}\label{prop1}
-	$f'(x)$ and $f^p(x)$ are montone 
+	$f'(x)$ and $f^p(x)$ are monotone 
 	\begin{proof}
-		Since there cannot be a pair of pivots (antipivots) where one is a subset of another, Fact \ref{fact1}, the set $P_f$ $(A_{f_p})$ forms a building set for the montone function. 
+		Since there cannot be a pair of pivots (antipivots) where one is a subset of another from Fact \ref{fact1}, the set $P_f$ $(A_{f_p})$ form a building set for the monotone function. 
 	\end{proof}
 \end{proposition}
 
-The functions $f', \neg f^p$ can clearly be used directly to compute lines 2, 3 respectively in the algorithm. As per \cite{Buhrman1999,Lovasz1993}, the log-rank conjecture holds for monotone functions and thus there exists communication protocols that compute these functions in polylogarithmic number of communicated bits in the number of their monomials. It is left to show $mon(f'), mon( \neg f^p) \leq mon(f)$.
+Recall that a building set for a monotone function correspond to the inputs in the support with minimum Hamming weight that are not subsets of each other.
 
-We shall show a property about montone functions and their monomials before we reason about the monomial complexity of $f', \neg f^p$.
+The functions $f', \neg f^p$ can clearly be used directly to compute lines 2, 3 respectively in the algorithm. As per \cite{Buhrman1999,Lovasz1993}, the log-rank conjecture holds for monotone functions and thus there exists communication protocols that compute these functions in polylogarithmic number of communicated bits in the number of their monomials. It is left to show $\mathsf{mon}(f'), \mathsf{mon}( \neg f^p) \leq \mathsf{mon}(f)$.
+
+We shall show a property about monotone functions and their monomials before we reason about the monomial complexity of $f', \neg f^p$.
 
 \begin{lemma}\label{lemma2}
-	If $g:\{0, 1\}^n \rightarrow \{0, 1\}$ is a monotone function and let $M \subset \{0,1\}^n$ be the building set for $g$, then we have that $$g(x) = \sum_{k=1}^{|M|} \ \sum_{A \subseteq M, |A| = k} -1^{k-1} \bigcup_{x \in A} x$$ where a string represents a monomial and the union of strings is the union of their characteristic sets.
+	If $g:\{0, 1\}^n \rightarrow \{0, 1\}$ is a monotone function and let $M \subset \{0,1\}^n$ be the building set for $g$, then we have that $$g(x) = \sum_{k=1}^{|M|} \ \sum_{A \subseteq M, |A| = k} -1^{k-1} \bigcup_{a \in A} a$$ where a string represents a monomial corresponding to its characteristic set and the union of strings is the union of their characteristic sets.
 
 	\begin{proof}
-		Consider any input $x$ in $\sup(g)$. Let $A \subseteq M$ such that $\forall a \in A, \ a \subseteq x$. We can assume that $x$ is simply a union of strings from $A$ since the suggested polynomial contains monomials only of that form. Since any monomial of the form $y \not \subseteq x$ will evaluate to 0 and every monomial $y = \bigcup_{z \in A'}z, \ A' \subseteq A$ will evaluate to 1, we will have that the polynomial reduces to $\sum_{i=1}^{|A|} -1^{i-1} \binom{|A|}{i}$. We can see that this sum evaluates to 1 by looking at the binomial expansion of  \\ $ -1((1 - 1)^{|A|} - \binom{|A|}{0}) = (\sum_{k = 0}^{|A|} -1^{k+1} \binom{|A|}{k}) + \binom{|A|}{0}$.
+		Consider any input $x$ in $\sup(g)$. Let $A \subseteq M$ such that $\forall a \in A, \ a \subseteq x$. We can assume that $x$ is simply a union of strings from $A$ since the suggested polynomial contains monomials only of that form. It is easy to see that inputs not in the support will be evaluate to $0$ since the function is monotone and the polynomial contains monomials only in the support. Since every monomial $y = \bigcup_{z \in A'}z$ such that $A' \subseteq A$ will evaluate to 1, we will have that the polynomial reduces to $\sum_{i=1}^{|A|} -1^{i-1} \binom{|A|}{i}$. We can see that this sum evaluates to 1 by looking at the binomial expansion of  \\ $ -1((1 - 1)^{|A|} - \binom{|A|}{0}) = (\sum_{k = 0}^{|A|} -1^{k+1} \binom{|A|}{k}) + \binom{|A|}{0}$.
 	\end{proof}
 
 \end{lemma}
@@ -59,96 +59,10 @@ We shall show a property about montone functions and their monomials before we r
 \begin{proposition}\label{prop2}
 	The monomials of the function $f'(x), \neg f^p(x)$ are contained in those of $f(x)$; taking into account the restriction of $f$ in $f^p$. 
 	\begin{proof}
-		Let us first consider $f'$. Notice that any monomial in $f'$, as per Lemma \ref{lemma2}, is a union of pivots. For all $s \in \sup(f)$ of this form (a union of pivots), $s$ has the property that any $s' \in \sup(f), \ s' \subseteq s$ also occurs in $\sup(f')$ and vice versa. Thus, as per \ref{lemma1}, the quantity $(-1)^{\order{s}}(\order{E_s} - \order{O_s})$ is the same in $f$ and $f'$. 
+		Let us first consider $f'$. Notice that any monomial in $f'$, as per Lemma \ref{lemma2}, is a union of pivots. For all $s \in \sup(f)$ of this form (a union of pivots), $s$ has the property that any $s' \in \sup(f)$ with $s' \subseteq s$ also occurs in $\sup(f')$ and vice versa. Thus, as per Lemma \ref{lemma1}, the quantity $(-1)^{\order{s}}(\order{E_s} - \order{O_s})$ is the same in $f$ and $f'$. 
 
 		Now, let us consider $\neg f^p$ where $p \in P_f$. The support of $\neg f^p$ is characterized by all $s$ such that $\not \exists a \in A_{f_p} \ | \ a \subseteq s$. By the definition of an antipivot, $(p \cup s) \in \sup(f)$. Thus, by Lemma \ref{lemma1}, any monomial $a$, which is a union of antipivots from $A_{f_p}$, must occur as $p \cup a$ in $f$. 
 	\end{proof}
 \end{proposition}
 
-
-Combining Proposition \ref{prop2} with Algorithm \ref{alg1} we have inductively shown that $CC(f \circ \wedge) \leq \log^c(mon(f))$ for $c \in O(1)$. 
-
-\hrule
-For $\vec{x}\in\F{2}^n$ we define $\vec{x}_{-i} := \vec{x} + 1_i$. 
-\begin{definition}\label{pivot}
-	Consider $f : \F{2}^n \to \F{2}$. We say that $\vec{x}\in \F{2}^n$ is a \text{pivot of $f$} if $f(\vec{x}) = 1$ and for any $i$ if $\vec{x}_i = 1$ then $f(\vec{x}_{-i}) = 0$.
-\end{definition}
-\begin{definition}\label{antipviot}
-	Consider $f : \F{2}^n \to \F{2}$. We say that $\vec{x}\in \F{2}^n$ is a \text{antipivot of $f$} if $f(\vec{x}) = 1$ and for any $i$ if $\vec{x}_i = 0$ then $f(\vec{x}_{-i}) = 0$.
-\end{definition}
-\begin{definition}\label{convex cube}
-	Let $f : \{0,1\}\to\{0,1\}$ be a boolean function. We say that $f$ is \textit{convex on the hypercube} if for $\vec{x},\vec{y}\in \mathsf{supp}(f)$ there is a shortest path $P$ between the vertices $x,y$ on the hypercube and every vertex of $P$ is also in $\mathsf{supp}(f)$
-\end{definition}
-\begin{lemma}
-	LTFs are convex on the hypercube.
-\end{lemma}
-\begin{proof}
-	Let $f(\vec{z}) = \iprod{\vec{w}}{\vec{z}} \geq w_0$ be a linear threshold function. and let $\vec{x},\vec{y}$ be arbitrary vertices of the hypercube $H^n$. Without loss of generality, we can take $\vec{x} = \vec{0}$. To see this, rotate the hypercube and relabel the vertices $\vec{z}\in H^n$ by $\vec{z}\to \vec{z} + \vec{x}$ (where addition is taken over $\F{2}^n$). Then consider $f'(\vec{z}) = \iprod{\vec{w}}{\vec{z} + \vec{x}} \geq w_0$, which is again an LTF. FILL IN MORE DETAILS
-	
-	Take the subcube $C_{\vec{y}} \subseteq H^n$ formed by all $\vec{z} \leq \vec{y}$ (under the hamming order). Clearly, $C_{\vec{y}}$ contains all shortest paths from $\vec{0}$ to $\vec{y}$. Let $i_1,i_2,\dots,i_k$ be the nonzero indices of $\vec{y}$ ordered such that $w_{i_1} \geq w_{i_2} \geq \dots \geq w_{i_k}$. Consider the shortest 
-	
-	
-\end{proof}
-\begin{lemma}\label{leave support}
-	Let $f$ be an LTF and $\vec{a}$ an antipivot of $f$.If $\vec{x} \geq \vec{a}$ in the Hamming order, then $f(\vec{x}) = 0$.
-\end{lemma}
-\begin{proof}
-	Assume not, and let $\vec{x}\in \mathsf{supp}(f)$ satisfy $\vec{a} \leq \vec{x}$ for some antipivot $\vec{a}$. By \ref{convex cube} some shortest path between $\vec{x}$ and $\vec{a}$ must be part of the support. Thus, $\vec{a}_{-i}\in\mathsf{supp}(f)$ for some $i$, contradicting the definition of antipivot \ref{antipviot}. 
-\end{proof}
-\begin{lemma}\label{enter support}
-	Let $f$ be an LTF and $\vec{p}$ a pivot of $f$.If $\vec{x} \leq \vec{p}$ in the Hamming order, then $f(\vec{x}) = 0$.
-\end{lemma}
-\begin{proof}
-	
-\end{proof}
-
-
-\begin{definition}\label{defmonoparts}
-		Let $f$ be an LTF. Define 
-	\begin{align*}
-	f^+(\vec{x}) := \begin{cases}
-	1 & \vec{x} \geq \vec{p}~ \text{for some pivot $\vec{p}$ of $f$}\\
-	0 & \text{otherwise}
-	\end{cases}\\
-	f^-(\vec{x}) := \begin{cases}
-	1 & \vec{x} > \vec{a}~ \text{for some antipivot $\vec{a}$ of $f$}\\
-	0 & \text{otherwise}
-	\end{cases}\\
-	\end{align*}
-\end{definition}
-\begin{proposition}\label{mono parts are mono}
-	$f_+,f_-$ are monotone.
-\end{proposition}
-\begin{proof}
-	This follows from the transitivity of the hamming order.
-\end{proof}
-
-\begin{proposition}\label{mono parts are parts}
-	$f(\vec{x}) = f^+(\vec{x})*(1 +  f_-(\vec{x}))$
-\end{proposition}
-\begin{proof}
-	By \ref{enter support} and \ref{leave support}, 
-\end{proof}
-\begin{corollary}\label{rank bound}
-	Let $F,F_+,F_-$ be the communication functions formed by $f,f_+,f_-$ respectively, and $M_F,M_+,M_-$ their corresponding communication matrices. Then 
-	\[
-		\rank{M_F}=\rank{M_+} *(1 + \rank{M_-}) = \Theta(\rank{M_+}\rank{M_-})
-	\].
-\end{corollary}
-\begin{proof}
-	By \ref{mono parts are parts} and the uniqueness of multilinear representations, $\mathsf{mon}(f) = \mathsf{mon}(f_+)(1 + \mathsf{mon}(f_-))$. By \cite{Buhrman1999}, 
-	\[
-		\rank{M_F} = \mathsf{mon}(f) = \mathsf{mon}(f_+)(1 + \mathsf{mon}(f_-) = \rank{M_+}(1 + \rank{M_-}) = \Theta(\rank{M_+}\rank{M_-})
-	\]
-\end{proof}
-We can now combine all these parts to prove our main claim.
-\begin{proof}[proof of \ref{mainresult}]
-	By \ref{mono parts are mono}, there are protocols $P_+,P_-$ for $F_+,F_-$ such that $P_+$ communicates $O(\mathsf{polylog}(\rank{M_+}))$ bits and $P_-$ communicates $O(\mathsf{polylog}(\rank{M_-}))$ bits. By \ref{mono parts are parts}, we can form the following protocol. First run $P_+$ on the input $\vec{x}$. If $\vec{x} \leq \vec{p}$ for some pivot $\vec{p}$, we return $0$. Otherwise, run $P_-$. If $\vec{x} \geq \vec{a}$ for some antipivot $\vec{a}$, we can return $0$. Otherwise, return $1$. Thus, 
-	\begin{align*}
-		CC(F) &\leq CC(F_+) + CC(F_-)\\
-		 &\leq O(\mathsf{polylog}(\rank{M_+})) + \mathsf{polylog}(\rank{M_-}))\\
-		 \intertext{By \ref{rank bound} and submodularity}
-		 &\leq O\left(\mathsf{polylog}(\rank{M_+}\rank{M_-})\right)
-	\end{align*}
-\end{proof}
 
